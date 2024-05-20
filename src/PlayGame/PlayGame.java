@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PlayGame {
 
-    static boolean playGame = false;
+    static boolean playGame;
     static int gameLives = 7;
 
     public static void setPlayGame() {
@@ -26,6 +26,10 @@ public class PlayGame {
         gameLives -= 1;
     }
 
+    public static void resetGame() {
+        gameLives = 7;
+    }
+
     public static void main(String[] args) {
         WordBank newWord = new WordBank();
         User currentPlayer = new User();
@@ -40,6 +44,7 @@ public class PlayGame {
 
         setPlayGame();
         while (playGame) {
+
             currentPlayer.makeAGuess(currentPlayer);
             String[] userSavedGuess = currentPlayer.getGuessesMade();
 

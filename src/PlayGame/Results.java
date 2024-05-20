@@ -1,5 +1,7 @@
 package PlayGame;
 
+import CommandRunner.CommandRunner;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +11,7 @@ public class Results {
     private final String selectedWord;
     private List<String> userAllGuesses = new ArrayList<>();
     private List<String> uniqueGuesses;
+    CommandRunner replay = new CommandRunner();
 
     public List<String> getUniqueGuesses() {
         return uniqueGuesses;
@@ -56,7 +59,6 @@ public class Results {
             endGame();
         }
     }
-
 
     public void drawHangman(int gameLife) {
         if (gameLife == 7) {
@@ -127,13 +129,14 @@ public class Results {
             System.out.println();
             System.out.println("GAME OVER! You have been hanged. Unfortunate turn of events");
             System.out.println("The word you needed was: " + selectedWord);
-            PlayGame.setEndGame();
+            endGame();
         }
     }
 
 
     public void endGame() {
-        System.out.println("Thanks for playing! See you next time :D");
-        PlayGame.setEndGame();
+        PlayGame.playGame = false;
+        System.out.println();
+        replay.playAgain();
     }
 }
