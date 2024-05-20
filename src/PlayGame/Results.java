@@ -1,11 +1,8 @@
 package PlayGame;
-
 import CommandRunner.CommandRunner;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 public class Results {
     private final String selectedWord;
@@ -129,10 +126,14 @@ public class Results {
             System.out.println();
             System.out.println("GAME OVER! You have been hanged. Unfortunate turn of events");
             System.out.println("The word you needed was: " + selectedWord);
-            endGame();
+            try {
+                Thread.sleep(3000);
+                endGame();
+            } catch (InterruptedException e) {
+              e.printStackTrace();
+            }
         }
     }
-
 
     public void endGame() {
         PlayGame.playGame = false;
