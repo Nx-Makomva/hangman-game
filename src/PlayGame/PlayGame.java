@@ -36,7 +36,6 @@ public abstract class PlayGame {
 
         String selectedWord = newWord.selectWord();
         Results resultsChecker = new Results(selectedWord);
-        System.out.println("The selected word is " + selectedWord);
         System.out.println("The word you are guessing has "
                 + selectedWord.length() + " characters."
                 + " You have " + gameLives + " lives."

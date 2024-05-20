@@ -111,7 +111,7 @@ public class Results {
             System.out.println("   |     (_)");
             System.out.println("   |     \\|/");
             System.out.println("   |      |");
-            System.out.println("   |     / \\");
+            System.out.println("   |     / ");
             System.out.println("   |");
             System.out.println("___|___");
         } else {
@@ -119,8 +119,8 @@ public class Results {
             System.out.println("   |/     |");
             System.out.println("   |       ");
             System.out.println("   |    ");
-            System.out.println("   |      \\|/");
             System.out.println("   |       |");
+            System.out.println("   |      /|\\");
             System.out.println("   |       |");
             System.out.println("___|___   / \\ (_) ");
             System.out.println();
