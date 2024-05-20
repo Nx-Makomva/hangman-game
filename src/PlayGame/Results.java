@@ -1,3 +1,5 @@
+package PlayGame;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -127,10 +129,6 @@ public class Results {
             System.out.println("The word you needed was: " + selectedWord);
             PlayGame.setEndGame();
         }
-
-
-
-
     }
 
 

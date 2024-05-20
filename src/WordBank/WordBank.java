@@ -1,3 +1,5 @@
+package WordBank;
+
 import java.util.Random;
 
 public class WordBank {

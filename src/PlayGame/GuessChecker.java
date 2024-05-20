@@ -1,3 +1,5 @@
+package PlayGame;
+
 public class GuessChecker {
 
     private final String selectedWord;
