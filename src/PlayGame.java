@@ -1,9 +1,10 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class PlayGame {
 
     static boolean playGame = false;
-    static int gameLives = 3;
+    static int gameLives = 7;
 
     public static void setPlayGame() {
         playGame = true;
@@ -25,58 +26,47 @@ public class PlayGame {
         WordBank newWord = new WordBank();
         User currentPlayer = new User();
 
-
         String selectedWord = newWord.selectWord();
         Results resultsChecker = new Results(selectedWord);
         System.out.println("The selected word is " + selectedWord);
-        System.out.println("The word you are guessing has " + selectedWord.length() + " characters. Good Luck!");
+        System.out.println("The word you are guessing has "
+                            + selectedWord.length() + " characters."
+                            + " You have " + gameLives + " lives."
+                            + " May the odds be ever in your favour.");
 
         setPlayGame();
-
-
         while (playGame) {
 
             currentPlayer.makeAGuess(currentPlayer);
-
-            // wait for input from user //
             String[] userSavedGuess = currentPlayer.getGuessesMade();
 
             for (String guess : userSavedGuess) {
                 resultsChecker.addUserGuess(guess);
             }
 
-            String UserSavedGuessAsString = Arrays.toString(userSavedGuess);
-            // wait for UserSavedGuessAsString to not be empty //
+            String userSavedGuessAsString = Arrays.toString(userSavedGuess);
 
-            GuessChecker guessChecker = new GuessChecker(UserSavedGuessAsString, selectedWord);
+            GuessChecker guessChecker = new GuessChecker(userSavedGuessAsString, selectedWord);
             boolean isGuessCorrect = guessChecker.checkGuess();
+            List<String> allGuesses = resultsChecker.getUniqueGuesses();
 
-            // when correct run the results class and display the _t__e___ fields
-            // results class needs to be passed selected word and saved guess to track user progress
-            // once user has all correct letters and matches to selected word then playGame turned to false
+
+            if (allGuesses != null) {
+                if (allGuesses.contains(userSavedGuessAsString)) {
+                    System.out.println("You've already guessed " + userSavedGuessAsString);
+                }
+            }
 
             if (isGuessCorrect) {
-                resultsChecker.correctUserGuess();
+                System.out.println("CORRECT!");
+                resultsChecker.userGuessFilter();
 
             } else {
-                if (gameLives == 1) {
-                   setEndGame();
-                } else {
                     setRemoveGameLives();
                     System.out.println("WRONG!");
-                    resultsChecker.displayResults();
-                    // if this gets triggered it should call another class that draws the hangman! maybe it can replace
-                    // the line right above (resultsChecker.displayResults()).
+                    resultsChecker.drawHangman(gameLives);
+                    resultsChecker.userGuessFilter();
                 }
-
-
-
-//                    System.out.println("Nope! Try Againnn");
-                    // when incorrect run the results class (diff method) and display the ASCII code or
-                    // remove a life
-                    // add if check for a counter. each time this loop runs it minuses 1 from a counter.
-                    // when counter hits 0 then game is stopped and play game is false.
                 }
             }
         }
-    }

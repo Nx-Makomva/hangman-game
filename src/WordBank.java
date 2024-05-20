@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class WordBank {
     public String selectWord () {
         String[] wordList = {
@@ -38,7 +40,9 @@ public class WordBank {
                 "nonsensical", "absurdity", "fantastical", "whimsical", "dillydally",
                 "malarkey", "clown", "paris", "london", "moscow", "australia"};
 
-        int randomPicker = (int) Math.floor(Math.random() * wordList.length);
-        return wordList[randomPicker];
+        Random random = new Random();
+
+        int randomIndex = random.nextInt(wordList.length);
+        return wordList[randomIndex];
     }
 }
