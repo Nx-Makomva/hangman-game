@@ -30,13 +30,12 @@ public class PlayGame {
         Results resultsChecker = new Results(selectedWord);
         System.out.println("The selected word is " + selectedWord);
         System.out.println("The word you are guessing has "
-                            + selectedWord.length() + " characters."
-                            + " You have " + gameLives + " lives."
-                            + " May the odds be ever in your favour.");
+                + selectedWord.length() + " characters."
+                + " You have " + gameLives + " lives."
+                + " May the odds be ever in your favour.");
 
         setPlayGame();
         while (playGame) {
-
             currentPlayer.makeAGuess(currentPlayer);
             String[] userSavedGuess = currentPlayer.getGuessesMade();
 
@@ -44,29 +43,28 @@ public class PlayGame {
                 resultsChecker.addUserGuess(guess);
             }
 
-            String userSavedGuessAsString = Arrays.toString(userSavedGuess);
+            String userSavedGuessAsString = String.join("", userSavedGuess);
 
             GuessChecker guessChecker = new GuessChecker(userSavedGuessAsString, selectedWord);
             boolean isGuessCorrect = guessChecker.checkGuess();
             List<String> allGuesses = resultsChecker.getUniqueGuesses();
 
-
             if (allGuesses != null) {
                 if (allGuesses.contains(userSavedGuessAsString)) {
                     System.out.println("You've already guessed " + userSavedGuessAsString);
+                    continue;
                 }
             }
-
-            if (isGuessCorrect) {
-                System.out.println("CORRECT!");
-                resultsChecker.userGuessFilter();
-
-            } else {
+                if (isGuessCorrect) {
+                    System.out.println("CORRECT!");
+                    resultsChecker.userGuessFilter();
+                } else {
                     setRemoveGameLives();
                     System.out.println("WRONG!");
                     resultsChecker.drawHangman(gameLives);
                     resultsChecker.userGuessFilter();
                 }
-                }
             }
         }
+    }
+

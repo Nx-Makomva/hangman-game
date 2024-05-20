@@ -50,7 +50,7 @@ public class Results {
         String resultAsString = result.toString();
 
         if (!resultAsString.contains("_")) {
-            System.out.println("HOORAYYY! you guessed " + selectedWord + " on time!");
+            System.out.println("YOU WIN! you guessed " + selectedWord + " and escaped a hanging!");
             endGame();
         }
     }
@@ -124,6 +124,7 @@ public class Results {
             System.out.println("___|___   / \\ (_) ");
             System.out.println();
             System.out.println("GAME OVER! You have been hanged. Unfortunate turn of events");
+            System.out.println("The word you needed was: " + selectedWord);
             PlayGame.setEndGame();
         }
 
