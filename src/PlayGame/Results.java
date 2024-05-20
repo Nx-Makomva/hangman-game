@@ -24,7 +24,7 @@ public class Results {
 
     public void displayResults() {
         uniqueGuesses = userAllGuesses.stream().distinct().collect(Collectors.toList());
-        System.out.println("So far, you have guessed: " + String.join(", ", uniqueGuesses));
+        System.out.println("Your guesses: " + String.join(", ", uniqueGuesses));
         System.out.println("Lives remaining: " + PlayGame.getGameLives());
         System.out.println();
     }
