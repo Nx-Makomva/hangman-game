@@ -5,7 +5,7 @@ import WordBank.WordBank;
 
 import java.util.List;
 
-public class PlayGame {
+public abstract class PlayGame {
 
     static boolean playGame;
     static int gameLives = 7;
