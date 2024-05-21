@@ -89,12 +89,12 @@ Please enter a letter:
         }
 ```
 Output:
-`` Please enter a letter
+``` Please enter a letter
 o
 CORRECT!
 
 word is _oo_
 
 Your guesses: h, b, a, e, i, o
-Lives remaining: 2
-``
+Lives remaining: 2```
+
