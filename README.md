@@ -47,6 +47,7 @@ The project is organized into several packages:
 
 ## Example
 The word you are guessing has 5 characters. You have 7 lives. May the odds be ever in your favour.
+
 Please enter a letter:
 
 
