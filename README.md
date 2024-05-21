@@ -72,3 +72,29 @@ Please enter a letter:
         } while (true);
     }
 ```
+
+### How correct guesses are filtered through and displayed in the terminal
+``` java
+    public void userGuessFilter() {
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < selectedWord.length(); i++) {
+            char currentChar = selectedWord.charAt(i);
+            if (userAllGuesses.stream().anyMatch(guess -> guess.contains(String.valueOf(currentChar)))) {
+                result.append(currentChar);
+            } else {
+                result.append("_");
+            }
+        }
+```
+Output:
+`` Please enter a letter
+o
+CORRECT!
+
+word is _oo_
+
+Your guesses: h, b, a, e, i, o
+Lives remaining: 2
+``
