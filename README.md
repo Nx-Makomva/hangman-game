@@ -50,4 +50,25 @@ The word you are guessing has 5 characters. You have 7 lives. May the odds be ev
 Please enter a letter:
 
 
-https://gist.github.com/Nx-Makomva/1d08f7e161e228c712ae9c6efbdb6b2f
+```
+    public void makeAGuess(User user) {
+        Scanner scanner = new Scanner(System.in);
+        String input;
+        String[] guess;
+
+        do {
+            System.out.println("Please enter a letter");
+            input = scanner.nextLine().trim();
+
+            if (input.matches("[a-zA-Z]") && !input.matches("\\d")) {
+                guess = new String[]{input.toLowerCase()};
+                user.setGuessesMade(guess);
+                break;
+
+            } else {
+                System.out.println("Invalid input. Please enter only one letter with no numbers.");
+            }
+
+        } while (true);
+    }
+```
