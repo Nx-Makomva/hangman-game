@@ -50,12 +50,4 @@ The word you are guessing has 5 characters. You have 7 lives. May the odds be ev
 Please enter a letter:
 
 
-``public class WordBank {
-    public String selectWord() {
-        String[] wordList = { "building", "ocean", "nic", /* other words */ };
-        Random random = new Random();
-        int randomIndex = random.nextInt(wordList.length);
-        return wordList[randomIndex];
-    }
-}``
-
+<script src="https://gist.github.com/Nx-Makomva/1d08f7e161e228c712ae9c6efbdb6b2f.js"></script>
