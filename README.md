@@ -97,5 +97,25 @@ CORRECT!
 word is _oo_
 
 Your guesses: h, b, a, e, i, o
-Lives remaining: 2```
+Lives remaining: 2
+```
+Incorrect guesses output:
+```
+Please enter a letter
+k
+WRONG!
+   _______
+   |/     |
+   |     (_)
+   |     \|/
+   |      |
+   |     / 
+   |
+___|___
+
+word is _oo_
+
+Your guesses: h, b, a, e, i, o, k
+Lives remaining: 1
+```
 
