@@ -50,4 +50,4 @@ The word you are guessing has 5 characters. You have 7 lives. May the odds be ev
 Please enter a letter:
 
 
-https://gist.github.com/Nx-Makomva/1d08f7e161e228c712ae9c6efbdb6b2f.js 
+https://gist.github.com/Nx-Makomva/1d08f7e161e228c712ae9c6efbdb6b2f
