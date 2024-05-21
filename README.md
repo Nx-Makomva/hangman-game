@@ -50,7 +50,7 @@ The word you are guessing has 5 characters. You have 7 lives. May the odds be ev
 Please enter a letter:
 
 
-```
+``` java
     public void makeAGuess(User user) {
         Scanner scanner = new Scanner(System.in);
         String input;
