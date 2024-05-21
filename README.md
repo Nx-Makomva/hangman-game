@@ -89,7 +89,8 @@ Please enter a letter:
         }
 ```
 Output:
-``` Please enter a letter
+```
+Please enter a letter
 o
 CORRECT!
 
