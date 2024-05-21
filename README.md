@@ -49,16 +49,13 @@ The project is organized into several packages:
 The word you are guessing has 5 characters. You have 7 lives. May the odds be ever in your favour.
 Please enter a letter:
 
-package WordBank;
 
-import java.util.Random;
-
-public class WordBank {
+``public class WordBank {
     public String selectWord() {
         String[] wordList = { "building", "ocean", "nic", /* other words */ };
         Random random = new Random();
         int randomIndex = random.nextInt(wordList.length);
         return wordList[randomIndex];
     }
-}
+}``
 
