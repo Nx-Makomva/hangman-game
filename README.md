@@ -1,4 +1,4 @@
-Hangman
+<h1>Hangman</h1>
 This project is a console-based Hangman game implemented in Java. 
 Players attempt to guess a randomly selected word by suggesting letters within a limited number of guesses.
 
